@@ -1,0 +1,1 @@
+dockere build -t my-cicd-docker-build .
