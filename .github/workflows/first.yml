@@ -21,10 +21,10 @@ jobs:
     # steps -> means the process to be followed by this job
     steps:
       # uses -> this basically means downloads the repo code
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
       # name: just the job name that displays when running
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         
         # with -> means with using this node-version
         with:
