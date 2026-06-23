@@ -17,14 +17,18 @@ on:
 jobs:
   build:
     # runs-on -> means where to run this job(basically each job runs on a isolated vm machine just for this workflow)
-    runs-on: ubuntu-latst
+    runs-on: ubuntu-latest
     # steps -> means the process to be followed by this job
     steps:
       # uses -> this basically means downloads the repo code
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       # name: just the job name that displays when running
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
+        
+        # with -> means with using this node-version
+        with:
+        node-version: '20'
 
       # run -> after installing the repo code run this commands
       - run: npm install
