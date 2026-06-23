@@ -1,0 +1,31 @@
+# name -> this is the title of a workflow.
+name: Prannav Learning Github Actions CI CD Workflow
+
+# on -> this is an event on which this work flow gets triggered
+# multiple events are there but 2 of them using is push (on main branch) and pull
+on:
+  push:
+    branches:
+      - main
+  pull_requests:
+    branches:
+      - main
+
+# jobs -> this is the actual task that workflows perform, like install dependencies, build, test, and publish etc etc.
+# we can chain jobs, on job can be dependend on another. same like if else
+# if one job fail then other jobs cannot run if they are dependent.
+jobs:
+  build:
+    # runs-on -> means where to run this job(basically each job runs on a isolated vm machine just for this workflow)
+    runs-on: ubuntu-latst
+    # steps -> means the process to be followed by this job
+    steps:
+      # uses -> this basically means downloads the repo code
+      - uses: actions/checkout@v3
+      # name: just the job name that displays when running
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+
+      # run -> after installing the repo code run this commands
+      - run: npm install
+      - run: npm test
