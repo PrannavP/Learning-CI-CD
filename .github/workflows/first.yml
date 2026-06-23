@@ -28,7 +28,7 @@ jobs:
         
         # with -> means with using this node-version
         with:
-        node-version: '20'
+          node-version: '20'
 
       # run -> after installing the repo code run this commands
       - run: npm install
